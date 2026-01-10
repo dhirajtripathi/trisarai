@@ -1,0 +1,15 @@
+streamlit
+langchain
+langchain-openai
+langchain-community
+langgraph
+faiss-cpu
+sentence-transformers
+python-dotenv
+langchain-aws
+boto3
+langchain-google-genai
+langchain-huggingface
+fastapi
+uvicorn
+python-multipart

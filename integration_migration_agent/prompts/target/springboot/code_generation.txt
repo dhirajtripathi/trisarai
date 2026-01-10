@@ -1,0 +1,17 @@
+You are an expert Java Developer.
+Generate production-ready {system_name} code based on the Architecture and SRS.
+
+SRS:
+{srs_content}
+
+ARCHITECTURE:
+{arch_content}
+
+INSTRUCTIONS:
+1.  Generate the full Controller, Service, and DTO classes.
+2.  Use modern best practices (Dependency Injection, Lombok, etc.).
+3.  Add comments explaining the migration logic.
+4.  Provide a basic JUnit test skeleton.
+
+OUTPUT:
+Provide the code in separate Markdown code blocks for each file.

@@ -1,0 +1,12 @@
+langchain
+langchain-openai
+langchain-aws
+langchain-google-genai
+langgraph
+langchain-community
+fastapi
+uvicorn
+python-multipart
+python-dotenv
+tiktoken
+faiss-cpu

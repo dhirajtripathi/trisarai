@@ -1,0 +1,91 @@
+{
+    "name": "Nexus OS - Agentic AI Suite",
+    "image": "mcr.microsoft.com/devcontainers/universal:2",
+    "features": {
+        "ghcr.io/devcontainers/features/python:1": {
+            "version": "3.11"
+        },
+        "ghcr.io/devcontainers/features/node:1": {
+            "version": "18"
+        }
+    },
+    "forwardPorts": [
+        3000,
+        5173,
+        8003,
+        5174,
+        8002,
+        5175,
+        8001,
+        5176,
+        8004,
+        5177,
+        8000,
+        5178,
+        8005
+    ],
+    "portsAttributes": {
+        "3000": {
+            "label": "Unified Portal",
+            "onAutoForward": "notify"
+        },
+        "5173": {
+            "label": "Underwriting UI",
+            "onAutoForward": "silent"
+        },
+        "5174": {
+            "label": "Claims UI",
+            "onAutoForward": "silent"
+        },
+        "5175": {
+            "label": "Lifecycle UI",
+            "onAutoForward": "silent"
+        },
+        "5176": {
+            "label": "Fraud UI",
+            "onAutoForward": "silent"
+        },
+        "5177": {
+            "label": "Compliance UI",
+            "onAutoForward": "silent"
+        },
+        "5178": {
+            "label": "Migration UI",
+            "onAutoForward": "silent"
+        },
+        "8000": {
+            "label": "Compliance API",
+            "onAutoForward": "ignore"
+        },
+        "8001": {
+            "label": "Lifecycle API",
+            "onAutoForward": "ignore"
+        },
+        "8002": {
+            "label": "Claims API",
+            "onAutoForward": "ignore"
+        },
+        "8003": {
+            "label": "Underwriting API",
+            "onAutoForward": "ignore"
+        },
+        "8004": {
+            "label": "Fraud API",
+            "onAutoForward": "ignore"
+        },
+        "8005": {
+            "label": "Migration API",
+            "onAutoForward": "ignore"
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "esbenp.prettier-vscode",
+                "dbaeumer.vscode-eslint"
+            ]
+        }
+    },
+    "postCreateCommand": "bash .devcontainer/setup.sh"
+}
