@@ -20,7 +20,7 @@
 ### System Workflow
 ```mermaid
 graph TD
-    Room[Data Room (1000s Files)] -->|Cluster| Taxonomy[Semantic Clusters]
+    Room["Data Room (1000s Files)"] -->|Cluster| Taxonomy[Semantic Clusters]
     
     Taxonomy -->|Contracts| Legal[Legal Agent]
     Taxonomy -->|Ledgers| Fin[Finance Agent]
