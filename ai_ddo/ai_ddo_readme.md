@@ -1,39 +1,40 @@
-# AI DDO (Due Diligence Operations)
+# AI DDO (Digital Delivery Orchestrator)
 **Usecase Name**: `ai_ddo`
 
 ## 1. Functional Overview
-**AI DDO (Digital Due Diligence Operations)** is a heavy-duty agentic platform designed for M&A (Mergers & Acquisitions) and complex Data Operations. It ingests "Data Rooms" (massive sets of unstructured financial/legal docs) and performs autonomous due diligence.
+**AI DDO** is a multi-agent platform designed to orchestrate the entire software delivery lifecycle. It acts as an "AI Office of the CIO," providing specialized agents for every role in an Agile organization—from Product Owners refining backlogs to Portfolio Orchestrators enforcing governance.
 
 ### Key Features
-*   **Context Curation**: Intelligently groups 1000s of pages into "Semantic Clusters".
-*   **Multi-Agent Swarm**: Specialized agents for "Legal Risk", "Financial Audit", and "Tech Stack Assessment".
-*   **Red Flag Detection**: Autonomously flags "Change of Control" clauses or "Pending Litigation".
+*   **Role-Based Concierge**: 6 distinct personas (PO, Scrum Master, Project Manager, Program Manager, Product Manager, Orchestrator).
+*   **Context Engineering**: Generates high-quality User Stories, Roadmaps, and Risk Assessments based on minimal input.
+*   **Governance Gate**: Automates compliance checks before releases.
+*   **Cross-Team Dependency Scanning**: Detects blockers across the program portfolio.
 
-## 2. Technical Architecture (MCP & Context Layers)
-This is the most advanced Context Engineering implementation in the suite.
+## 2. Technical Architecture
+The system uses a Micro-Frontend architecture with a shared React UI (`ui/`) and a Python backend (`api.py`) that routes requests to specialized agent workflows.
 
 ### Components
-1.  **Context Curator (`context_curator.py`)**:
-    *   Uses **Hierarchical Summarization**. Segments docs -> Summaries -> Meta-Summaries.
-    *   Allows the LLM to navigate a 10GB Data Room without exploding the context window.
-2.  **MCP Schema (`mcp_schema.py`)**:
-    *   Exposes the "Data Room" as a searchable tool resource.
-    *   Standardizes query interfaces for the sub-agents.
-3.  **Agent Swarm (`/agents`)**:
-    *   Independent processes analyzing different aspects of the same data set concurrently.
+1.  **UI Layer**: React + TailwindCSS dashboard with role-switching capabilities.
+2.  **Agent Layer (`agents/`)**:
+    *   `po_agent`: Generates user stories (WSJF, Acceptance Criteria).
+    *   `sm_agent`: Analyzes sprint velocity and flow efficiency.
+    *   `pm_agent`: Generates strategic roadmaps.
+    *   `orch_agent`: Validates compliance against policy docs.
+3.  **Config Store**: Manages LLM and Jira credentials dynamically.
 
 ## 3. Implementation Steps
 
 ### Prerequisites
-*   Python 3.10+
-*   Vector Store (Chroma)
+*   Python 3.11+
+*   Node.js 18+
+*   LLM API Key (Azure/AWS/Google)
 
 ### Setup & Run
 1.  **Navigate**: `cd ai_ddo`
 2.  **Install**: `pip install -r requirements.txt`
 3.  **Run API**: `python api.py`
-4.  **Run UI**: `cd ui && npm start` (or similar)
+4.  **Run UI**: `cd ui && npm install && npm run dev`
 
 ## 4. Agentic Concepts
-*   **Reflective Search**: If an agent can't find an answer in Summary Level 1, it autonomously decides to "drill down" to Level 2 (Full Text) for specific chapters.
-*   **Cross-Validation**: The "Legal Agent" and "Financial Agent" share findings to detect discrepancies (e.g., Legal says "No debt" but Finance sees "Loan Payments").
+*   **Hierarchical Planning**: Strategy (PM) -> Roadmap (PgM) -> Backlog (PO) -> Execution (SM).
+*   **Active Governance**: The Orchestrator agent can "Lock the Gate," preventing deployment if risks are too high.

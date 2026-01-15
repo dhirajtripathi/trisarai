@@ -35,16 +35,23 @@ graph TD
 *   **Persona**: "John", 25 years old.
 *   **Portfolio**: Auto Policy (Sedan).
 
-### B. The Life Event
-1.  **Select**: "Marriage".
-2.  **Simulate**: The system instantly updates John's demographic state (Status: Married).
-3.  **Agent Reaction**:
-    *   *Logic*: "Marriage implies shared assets and potential future dependents."
-    *   *Gap*: "Lack of Life Insurance."
-    *   *Offer*: "Term Life Policy ($500k coverage)."
-    *   *Price*: "$25/month."
+### B. Monitoring (Simulated)
+1.  **Customer Profile**: The dashboard displays "Alex Doe" (Hardcoded for Demo).
+    *   Review "Current Policies" and "Risk Score".
 
-### C. The Communication
+### C. Simulating Life Events
+1.  **Sidebar**: Locate "Simulate Life Event".
+2.  **Trigger**: Click **"💍 Getting Married"** or **"🚗 Buying a New Car"**.
+3.  **Agent Response**:
+    *   **Analysis**: "Detected Event: Marriage".
+    *   **Pricing**: See "Premium Change" (e.g., +$20.00).
+    *   **Recommendation**: "Bundle Renters with Spouse."
+4.  **Action**:
+    *   Review the **"Draft Communication"**.
+    *   Click **"Approve & Send"**.
+    *   *Result*: "Message sent to customer!" toast appears.
+
+### D. The Communication
 *   Read the **Generated Email**: It uses a congratulatory tone ("Best wishes on your wedding!") and softly pivots to protection ("To protect your new shared future..."). This demonstrates **Tone Matching**.
 
 ## 4. Advanced

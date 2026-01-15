@@ -28,26 +28,20 @@ graph LR
 ```
 
 ## 2. Launching the Tool
-*   **Direct URL**: `http://localhost:8505`
+*   **Direct URL**: `http://localhost:5176`
 
 ## 3. Step-by-Step Walkthrough
 
-### A. The Input
-1.  **Source**: Select "Legacy WSDL".
-2.  **Upload**: Drag the `AccountService.wsdl` file.
-3.  **Agent Analysis**: The agent reads the XML structures (`ComplexTypes`, `PortTypes`).
+### B. Running a Transformation
+1.  **Select Source**: Choose "WEBMETHODS" or "TIBCO" from the dropdown.
+2.  **Select Target**: Choose "SPRINGBOOT" or "AWS LAMBDA".
+3.  **Upload**: Click the upload area to select a Config File (XML, Zip, YAML).
+4.  **Execute**: Click **"Start Migration"**.
 
-### B. The Mapping Strategy
-*   The UI displays a "Proposed Map".
-*   **Review**: You see `GetAccountBalance` -> `GET /accounts/{id}/balance`.
-*   **Correction**: If the agent guessed wrong (e.g., mapped a sensitive update to `GET`), you can correct it to `POST` in the chat instructions.
-
-### C. The Artifacts
-1.  Click **"Generate Assets"**.
-2.  **Download Bundle**:
-    *   `openapi.yaml`: The clean, modern contract.
-    *   `kong.yaml`: Ready to `kubectl apply` to your Kubernetes cluster.
-    *   `azure.tf`: Ready to `terraform apply` to provision the API Management Service.
+### C. Reviewing Results
+1.  **Generated Config**: The right-hand panel displays the converted code (YAML/HCL).
+2.  **Validation**: Syntax highlighting ensures readability.
+3.  *Note: Deployment is manual in this version.*
 
 ## 4. Advanced
 *   **Linter**: The integrated Spectral Linter instantly grades the generated spec (e.g., Score: 95/100), ensuring you don't commit low-quality specs.

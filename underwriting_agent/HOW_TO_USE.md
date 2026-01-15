@@ -32,16 +32,23 @@ graph TD
 
 ## 3. Step-by-Step Walkthrough
 
-### A. The Healthy Applicant
-1.  **Profile**: Select "Non-Smoker, BMI 22".
-2.  **IoT**: Toggle "Apple Watch Connect" -> High Steps, Low Resting Heart Rate.
-3.  **Quote**: Agent offers "Preferred Plus" rate ($20/mo) with a "Wellness Discount".
+### A. Start New Application
+1.  **Sidebar**: Go to "New Application".
+2.  **Select Applicant**: Choose **"user123"** (Simulated High Risk) or **"user456"** (Healthy).
+3.  **Trigger**: Click **"Start Underwriting"**.
+    *   *Effect*: The agent ingests IoT/EHR data in the background and creates a case (`case_user123`).
 
-### B. The Contextual Risk
-1.  **Profile**: Add "Hobby: Cave Diving".
-2.  **Analysis**: The Agent checks its Knowledge Base.
-    *   *Retrieval*: "Cave Diving is classified as Hazardous Activity Class IV."
-3.  **Quote**: Agent adds a "Flat Extra" surcharge of $5/mo/1k coverage.
+### B. Underwriter Review
+1.  **Dashboard**: Look at the "Underwriter Review Queue".
+2.  **Select Case**: Pick `case_user123` from the dropdown.
+3.  **Analyze**:
+    *   Read the **"Relevant Medical History"** table.
+    *   Read the **"Agent Reasoning"** finding gaps.
+    *   Review the **"Proposed Policy"** premium ($/mo).
+4.  **Decision**:
+    *   Select **"Approve"** or **"Reject"** radio button.
+    *   Click **"Submit Decision"**.
+    *   *Outcome*: The Policy JSON is generated and displayed. Extra" surcharge of $5/mo/1k coverage.
 4.  **Policy**: The generated PDF explicitly lists "Exclusion: Death resulting from Scuba incidents."
 
 ## 4. Advanced

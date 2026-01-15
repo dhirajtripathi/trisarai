@@ -17,17 +17,17 @@ The **Integration Migration Agent** targets the specific niche of "Middleware Re
 ```mermaid
 graph TD
     XML[Legacy XML Flow] -->|Ingest| Graph[Flow Graph]
-    Graph -->|Identify Patterns| Analysis[Pattern Matcher]
+    Graph -->|Reverse Engineer| SRS[SRS Generator]
     
-    Analysis -->|Scatter-Gather| Target[Spring Boot Generator]
-    Target -->|Convert| Java[Java Code]
-    Target -->|Convert| Unit[JUnit Tests]
+    SRS -->|Review Reqs| Human[Human Architect]
+    Human -->|Approve| Gen[Code Generator]
     
-    Java -->|Verify| Build[Compiler Check]
+    Gen -->|Forward Engineer| Java[Spring Boot Code]
+    Gen -->|Generate| Unit[JUnit Tests]
 ```
 
 ## 2. Launching the Tool
-*   **Direct URL**: `http://localhost:5178` (UI)
+*   **Direct URL**: `http://localhost:5177` (UI)
 
 ## 3. Step-by-Step Walkthrough
 
@@ -38,12 +38,16 @@ graph TD
     *   *Nodes*: 15.
     *   *External Calls*: 3 (Database, CRM, SAP).
 
-### B. Conversion
-1.  **Target**: Choose "Java Spring Boot".
-2.  **Run**: The agent writes the code class-by-class.
-3.  **Inspect**:
-    *   The `Database Connector` in XML becomes a `JPA Repository` in Java.
-    *   The `Transformer` mapping becomes a `MapStruct` mapper.
+### B. The Migration Pipeline
+1.  **Ingestion**: Select Source/Target and **Upload** legacy files.
+    *   Click **"Initialize Analysis"**.
+2.  **Reverse Engineering (SRS)**:
+    *   The Agent generates a "Software Requirements Specification".
+    *   **Review** the text.
+    *   Click **"Approve & Generate Architecture"**.
+3.  **Forward Engineering (Code)**:
+    *   The Agent generates **Source Code** (Spring Boot) and **Unit Tests** (JUnit).
+    *   Review the code in the "Target Artifacts" view.
 
 ### C. Refactoring
 1.  **Prompt**: "Make this code reactive using WebFlux."

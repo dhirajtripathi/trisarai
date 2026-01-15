@@ -1,55 +1,65 @@
-# User Guide: AI DDO (Due Diligence Operations)
+# User Guide: AI Digital Delivery Orchestrator (DDO)
 
 ## 1. Functional Overview
-**AI DDO** is a heavy-lifting agent designed for the high-stakes world of Mergers & Acquisitions (M&A). When Company A buys Company B, they must review thousands of documents (Contracts, Patents, Org Charts, Tax Returns) in a "Data Room" to find risks. This is typically done by an army of junior lawyers burning the midnight oil. AI DDO automates this document crunching.
+The **AI Digital Delivery Orchestrator (DDO)** is a comprehensive management system for modern software delivery. It solves the problem of "Agile Fragmentation" by unifying Strategy, Execution, and Governance into a single intelligent platform.
 
 ### Business Value
-*   **Speed**: Analyzing a 10GB Data Room in hours instead of weeks.
-*   **Risk Identification**: Catching "Poison Pills" (e.g., a contract clause that allows a major revenue source to walk away if the company is sold) that tired humans might miss.
-*   **Cost Reduction**: Reducing the legal billable hours significantly.
-*   **Valuation Accuracy**: Helping the Investment Committee make a more informed bid based on the true state of the target's assets/liabilities.
+*   **Alignment**: Ensures that the code being written (Execution Layer) actually matches the business goals (Strategy Layer).
+*   **Velocity**: AI agents handle the administrative burden—writing tickets, calculating WSJF, updating roadmaps—freeing humans to focus on creative work.
+*   **Governance**: Automated "Gates" ensure that no project bypasses security or compliance checks.
 
 ### Key Capabilities
-*   **Hierarchical Clustering**: The agent intelligently organizes a mess of unlabelled files into a structured taxonomy (Legal/Finance/HR).
-*   **Multi-Agent Swarm**:
-    *   **Legal Agent**: Reviews contracts for change-of-control, liability caps, and expiry.
-    *   **Financial Agent**: Extracts EBITDA, Debt schedules, and recurring revenue metrics.
-    *   **Tech Agent**: Reviews IP assignments and software licenses.
-*   **Meta-Analysis**: Synthesizing findings across domains (e.g., "Legal says we own the IP, but Finance shows we are paying royalties for it -> Discrepancy").
+*   **6 Specialized Agents**:
+    *   **Product Owner (PO)**: Drafts high-quality User Stories with Acceptance Criteria.
+    *   **Scrum Master (SM)**: Monitors sprint health and detects impediments.
+    *   **Product Manager (PMA)**: Translates business goals into quarterly roadmaps.
+    *   **Project Manager (PROJMA)**: Forecasts delivery dates and manages risk registers.
+    *   **Program Manager (PGMA)**: Visualizes cross-team dependencies and critical paths.
+    *   **Portfolio Orchestrator (ORCH)**: Enforces corporate policy and compliance.
 
 ### System Workflow
 ```mermaid
 graph TD
-    Room["Data Room (1000s Files)"] -->|Cluster| Taxonomy[Semantic Clusters]
+    Strat[Strategy Layer] -->|Goals| PMA[Product Manager]
+    PMA -->|Roadmap| PGMA[Program Manager]
+    PGMA -->|Dependencies| PO[Product Owner]
     
-    Taxonomy -->|Contracts| Legal[Legal Agent]
-    Taxonomy -->|Ledgers| Fin[Finance Agent]
-    Taxonomy -->|Code| Tech[Tech Agent]
+    PO -->|Stories| Team[Dev Team]
+    Team -->|Metrics| SM[Scrum Master]
     
-    Legal & Fin & Tech -->|Findings| Syn[Synthesis Engine]
-    Syn -->|Prioritize| Report[Red Flag Report]
+    SM & PROJMA -->|Status| ORCH[Orchestrator]
+    ORCH -->>|Gate Decision| Release[Production Release]
 ```
 
 ## 2. Launching the Tool
-*   **Direct URL**: `http://localhost:5182`
+*   **Direct URL**: `http://localhost:8506` (or accessed via Unified Portal).
+*   **API Port**: `8006`
 
 ## 3. Step-by-Step Walkthrough
 
-### A. Ingestion
-1.  **Pointing**: Select the "Sample Data Room" (Mock folder of PDFs).
-2.  **Process**: Watch the progress bar as the system OCRs and Indexes the content.
+### A. The Product Owner (Planning)
+1.  **Select Role**: Click "Product Owner" in the sidebar.
+2.  **Input**: Enter a raw requirement, e.g., "We need to add Apple Pay to the checkout flow."
+3.  **Generate**: Click **"Generate Stories"**.
+4.  **Review**: The agent outputs detailed stories (e.g., "As a User, I want to select Apple Pay...").
+    *   *WSJF Score*: Prioritization metric included.
+    *   *Acceptance Criteria*: Gherkin syntax ready for QA.
+5.  **Approve**: Click **"Approve"** to commit them to the mock backlog.
 
-### B. The "Red Flag" Report
-1.  Click **"Analyze Risks"**.
-2.  **Output**: A matrix of High/Medium/Low risks.
-    *   *High Risk*: "Pending Litigation found in `court_docs_2023.pdf`. Potential liability $2M."
-    *   *Medium Risk*: "lease agreement for HQ expires in 6 months."
+### B. The Scrum Master (Execution)
+1.  **Select Role**: Click "Scrum Master".
+2.  **Scan**: Click **"Scan Board"**.
+3.  **Analysis**: The agent reads the Sprint Board state.
+    *   *Metrics*: See Velocity and Cycle Time trends.
+    *   *Anomalies*: "Alert: Ticket XYZ has been stuck in 'In Progress' for 5 days."
+4.  **Action**: Click **"Escalate"** to notify the team.
 
-### C. Q&A (Deep Dive)
-1.  **Ask**: "Who are the top 3 customers by revenue?"
-2.  **Agent**: Scans Master Service Agreements (MSAs) and Invoices to compile a ranked list.
-3.  **Ask**: "Are there any non-compete clauses for the Founders?"
-4.  **Agent**: "Yes, Founder X has a 2-year non-compete. See `Employment_Contract_Founder.pdf` Page 4."
+### C. The Portfolio Orchestrator (Governance)
+1.  **Select Role**: Click "Orchestrator".
+2.  **Audit**: Click **"Run Compliance Check"**.
+3.  **Gate Status**:
+    *   If compliant: **"Governance Approved"** (Green Unlock Icon).
+    *   If risky: **"Gate Locked"** (Red Lock Icon) with a list of violations (e.g., "Budget exceeded", "Security check missing").
 
-## 4. Tech Note
-*   This tool uses **Large Context Windows** and **Reflective Search** to handle document-level reasoning rather than just sentence-level retrieval.
+## 4. Configuration
+*   **Settings ⚙️**: Use the Settings tab to connect to your real Jira instance or switch LLM providers (Azure/AWS/Google).

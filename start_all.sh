@@ -38,6 +38,9 @@ cd text_to_sql_ui && npm run dev -- --host --port 5173 > /dev/null 2>&1 &
 # kyc_dashboard_ui -> 5175
 if [ -d "rag_mcp_ui" ]; then cd rag_mcp_ui && npm run dev -- --host --port 5174 > /dev/null 2>&1 &; fi
 if [ -d "kyc_dashboard_ui" ]; then cd kyc_dashboard_ui && npm run dev -- --host --port 5175 > /dev/null 2>&1 &; fi
+if [ -d "api_transformation_agent/ui" ]; then cd api_transformation_agent/ui && npm run dev -- --host --port 5176 > /dev/null 2>&1 &; fi
+if [ -d "integration_migration_agent/ui" ]; then cd integration_migration_agent/ui && npm run dev -- --host --port 5177 > /dev/null 2>&1 &; fi
+if [ -d "ai_ddo/ui" ]; then cd ai_ddo/ui && npm run dev -- --host --port 5178 > /dev/null 2>&1 &; fi
 
 # Wait for startup
 sleep 5
@@ -50,11 +53,12 @@ echo "--------------------------------------------------------"
 echo "📊 Text-to-SQL       : http://localhost:5173"
 echo "📚 RAG Knowledge     : http://localhost:5174"
 echo "🆔 KYC Dashboard     : http://localhost:5175"
+echo "🔁 API Transformer   : http://localhost:5176"
+echo "🔄 Int. Migration    : http://localhost:5177"
 echo "🚗 Claims Adjuster   : http://localhost:8501"
 echo "🕵️  Fraud SIU         : http://localhost:8502"
 echo "📝 Underwriting      : http://localhost:8503"
 echo "⚖️  Compliance Bot    : http://localhost:8504"
-echo "🔁 API Transformer   : http://localhost:8505"
 echo "🔄 Lifecycle Mgr     : http://localhost:8506"
 echo "--------------------------------------------------------"
 echo "Press Ctrl+C to stop all agents."

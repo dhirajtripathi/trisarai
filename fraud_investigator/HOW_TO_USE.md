@@ -36,12 +36,21 @@ graph LR
 ### A. Monitoring
 *   The dashboard shows a live ticker of incoming applications. Most are "Green" (Normal).
 
-### B. The Attack Simulation
-1.  Sidebar: Select **"Simulate Attack: Ghost Broker"**.
-2.  **Observe**: A burst of 5-10 applications appears in the feed.
-3.  **Detection**: The "Anomaly Score" gauge spikes into the Red zone.
-4.  **Investigation**: The Agent auto-triggers a "Deep Dive". It queries the history of the IP address `192.168.1.X`.
-5.  **Result**: "ALERT: Ring Detected. 12 Policies linked to one device."
+### B. Investigating a Case
+1.  **Select Case**: In the "Incoming Claims" feed, locate **"John Doe Fake"** (CLM-2026-001).
+2.  **Trigger**: Click the **"Investigate"** button on the card.
+3.  **Watch Response**:
+    *   The Agent starts "Gathering Intelligence" (Spinner).
+    *   It cross-references the "Ghost Broking DB".
+    *   It scans "Social Media" (Simulated).
+
+### C. The Verdict
+1.  **Evidence Board**: Review the logs.
+    *   *Alert*: "Found post matching claimant description."
+    *   *Flag*: "High Risk (Score > 70)".
+2.  **Action**: Since the score is High, the "INTERVENTION REQUIRED" warning appears.
+3.  **Decision**: Click **"🔴 CONFIRM FRAUD & REJECT"**.
+    *   *Result*: "Claim Rejected. User flagged." 12 Policies linked to one device."
 
 ### C. The Report
 *   Open the generated **"Investigation Dossier"**. It contains a summary for the police/legal team.

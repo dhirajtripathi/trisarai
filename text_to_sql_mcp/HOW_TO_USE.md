@@ -41,8 +41,15 @@ graph LR
     *   Agent analyzes schema (`Orders`, `Customers`).
     *   Agent generates SQL: `SELECT Region, AVG(Total) FROM ...`.
     *   Agent validates syntax.
-3.  **Output**: view the resulting table and the SQL used.
-4.  **Refine**: "Filter this for only US and Canada." (Conversational Context).
+3.  **Review Logic**:
+    *   **Thinking Process 🧠**: Read the agent's reasoning (visible by default).
+    *   **Technical Details**: Expand **"Show Technical Details (SQL)"** to verify the code.
+4.  **Run Analysis**: Click **"▶ Run Analysis"**.
+5.  **Export**: Click **"⬇ CSV"** to save results.
+
+### C. Visualizing Data
+*   **Schema Browser**: The sidebar displays the active database schema (Tables & Columns).
+*   **ER Diagram**: Switch to the "Diagram View" to see the relationship graph.
 
 ## 3. Visualization
 *   **ER Diagram View**: Click the generic "Graph" icon to see an interactive entity-relationship diagram of your connected database.

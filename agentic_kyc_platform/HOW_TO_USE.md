@@ -15,16 +15,16 @@ graph TD
     User[New Case] -->|Submit| Orch[Orchestrator]
     
     Orch -->|ID Image| Doc[Doc Analysis Agent]
-    Doc -->|Extracted Data| Risk[Risk Agent]
+    Doc -->|Review JSON| Human1[Human Review]
+    Human1 -->|Confirm| Risk[Risk Agent]
     
     Risk -->|Sanctions Check| Watch[Watchlist DB]
+    Risk -->|Review Hits| Human2[Human Review]
     
-    Risk -->|Score| Comp[Compliance Agent]
-    Doc -->|Authenticity| Comp
+    Human2 -->|Accept| Comp[Compliance Agent]
+    Comp -->|Propose Decision| Human3[Final Approval]
     
-    Comp -->|Decision| Final{Verdict}
-    Final -->|Pass| Green[Approve]
-    Final -->|Fail| Red[Reject]
+    Human3 -->|Click Approve| Green[Case Closed]
 ```
 
 ## 2. Launching the Tools
@@ -40,19 +40,30 @@ graph TD
 ### A. The Dashboard
 *   View a list of active cases. Note the statuses: "New", "Processing", "Approved".
 
-### B. New Onboarding
-1.  **Input**: Enter "Juan Garcia" and upload dummy ID images.
-2.  **Processing (The Swarm)**:
-    *   Step 1: **Doc Agent** validates the ID expiry date. (Status: Valid).
-    *   Step 2: **Risk Agent** takes the name "Juan Garcia" and searches OFAC. (Status: Clean).
-    *   Step 3: **Compliance Agent** sees both "Valid" and "Clean".
-3.  **Verdict**: "APPROVED".
+### B. Starting a New Case
+1.  Click **"+ New KYC Case"**.
+2.  **Upload**: Select an ID Card image (e.g., `sample_id.jpg`).
+3.  **Auto-Submission**: The system automatically creates the case and begins processing upon upload.
 
-### C. The Sanction Hit
-1.  **Input**: Enter a name known to the mock watchlist (e.g., "Osama" or "Tony Soprano").
-2.  **Processing**:
-    *   **Risk Agent**: "ALERT: Name match found in High Risk Database."
-3.  **Verdict**: "MANUAL_REVIEW". The agent refuses to auto-approve and routes it to a human queue.
+### C. The Interactive Workflow (Human-in-the-Loop)
+Unlike a black box, this demo allows you to verify each agent's output:
+1.  **Review Docs**: The "Doc Analysis Agent" extracts the name/ID.
+    *   *Action*: Users can edit the text (e.g., correct a typo).
+    *   *Click*: **"✅ Confirm & Verify"**.
+2.  **Review Checks**: The "Risk Agent" runs background checks (OFAC, Watchlists).
+    *   *Display*: "Sanctions Check: Passed/Failed".
+    *   *Click*: **"✅ Accept Checks"**.
+3.  **Review Risk**: The system calculates a score (0-100).
+    *   *Display*: "Risk Score: 10/100 (Low)".
+    *   *Click*: **"✅ Accept Risk Score"**.
+4.  **Final Decision**: The "Compliance Agent" proposes a verdict.
+    *   *Click*: **"✅ Final Approve"** to close the case.
+
+### D. Testing Sanctions (Red Flag)
+1.  **Upload**: Start a new case with any ID.
+2.  **Edit**: In the "Review Docs" step, manually change the "Full Name" to **"Osama Bin Laden"** or **"Tony Soprano"**.
+3.  **Proceed**: Click "Confirm & Verify".
+4.  **Result**: Protocol will flag a "High Risk" hit in the next step, leading to a "Manual Review" recommendation.
 
 ## 4. Tech Note
 *   This system uses **Agent-to-Agent Handoffs**. The output of the Doc Agent becomes the *input* context for the Risk Agent.

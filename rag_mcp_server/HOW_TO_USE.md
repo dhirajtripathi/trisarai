@@ -40,9 +40,9 @@ sequenceDiagram
 
 ### A. Ingest (Knowledge Administrator)
 1.  Go to **Ingest Tab**.
-2.  Upload `Company_Policy_2024.pdf`.
-3.  Add Metadata: `Type: HR`.
-4.  Process: The system vectors the text into the Chroma/Qdrant database.
+2.  **Upload**: Click to select `Company_Policy_2024.pdf` (or drag & drop).
+3.  **Process**: The system automatically OCRs and vectors the text into the database.
+4.  *Log*: Watch the activity log for "Success! Doc ID: ...".
 
 ### B. Chat (End User)
 1.  Go to **Chat Tab**.

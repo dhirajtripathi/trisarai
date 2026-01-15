@@ -37,13 +37,18 @@ sequenceDiagram
 
 ## 3. Step-by-Step Walkthrough
 
-### A. The Travel Policy Check
-1.  **Select Policy**: "Global Travel Expense Policy 2024".
-2.  **Scenario**: User uploads a receipt for a "Business Class Flight to Paris ($5,000)".
-3.  **Agent Logic**:
-    *   Retrieves: "flights < 6 hours must be Economy."
-    *   Retrieves: "VP level and above exceptions."
-4.  **Verdict**: "REJECTED. Flight duration is 4 hours. No VP status detected."
+### B. Knowledge Base Setup
+1.  **Sidebar**: locate the "Knowledge Base" section.
+2.  **Upload**: Upload regulation text files (`.txt`) OR enter text manually (e.g., "New Law: Claims must be settled in 30 days").
+3.  **Click**: **"Add to Knowledge Base"**.
+
+### C. Audit Workflow
+1.  **Draft Input**: In the main text area, enter a draft decision (e.g., "We are denying your claim because...").
+2.  **Scan**: Click **"Scan for Compliance"**.
+3.  **Review**:
+    *   **Status**: See "VIOLATION" or "COMPLIANT".
+    *   **Feedback**: Read the specific regulations triggered.
+    *   **Safe Rewrite**: If blocked, copy the **"Final Safe Response"**.
 
 ### B. The Contract Scan
 1.  **Upload**: `Vendor_Agreement_Draft.pdf`.

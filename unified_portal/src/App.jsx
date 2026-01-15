@@ -30,7 +30,7 @@ function App() {
             icon: Search,
             color: "indigo",
             domain: "data",
-            url: "http://localhost:8001" // Placeholder
+            url: "http://localhost:5174"
         },
 
         // --- Financial Services ---
@@ -40,7 +40,7 @@ function App() {
             icon: Activity,
             color: "emerald",
             domain: "fsi",
-            url: "http://localhost:5174"
+            url: "http://localhost:8503"
         },
         {
             title: "Classic KYC Platform",
@@ -56,7 +56,7 @@ function App() {
             icon: Zap,
             color: "yellow",
             domain: "fsi",
-            url: "http://localhost:5176"
+            url: "http://localhost:8501"
         },
         {
             title: "Fraud Investigator",
@@ -64,7 +64,7 @@ function App() {
             icon: Shield,
             color: "rose",
             domain: "fsi",
-            url: "http://localhost:5177"
+            url: "http://localhost:8502"
         },
         {
             title: "Compliance Bot",
@@ -72,7 +72,7 @@ function App() {
             icon: Globe,
             color: "amber",
             domain: "fsi",
-            url: "http://localhost:5178"
+            url: "http://localhost:8504"
         },
 
         // --- Developer Tools ---
@@ -82,7 +82,7 @@ function App() {
             icon: Server,
             color: "cyan",
             domain: "dev",
-            url: "http://localhost:5179"
+            url: "http://localhost:5176"
         },
         {
             title: "Migration Agent",
@@ -90,7 +90,7 @@ function App() {
             icon: RefreshCw,
             color: "sky",
             domain: "dev",
-            url: "http://localhost:5180"
+            url: "http://localhost:5177"
         },
         {
             title: "Lifecycle Manager",
@@ -98,7 +98,7 @@ function App() {
             icon: Layers,
             color: "purple",
             domain: "dev",
-            url: "http://localhost:5181"
+            url: "http://localhost:8506"
         },
         {
             title: "AI DDO",
@@ -106,7 +106,7 @@ function App() {
             icon: FileJson,
             color: "fuchsia",
             domain: "dev",
-            url: "http://localhost:5182"
+            url: "http://localhost:5178"
         }
     ];
 
