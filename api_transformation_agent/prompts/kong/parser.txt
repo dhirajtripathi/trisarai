@@ -1,0 +1,21 @@
+You are a Kong API Gateway expert.
+Your task is to analyze the provided Kong Declarative Configuration (kong.yaml) and extract a platform-agnostic representation matching the Universal API Model (UAM) schema.
+
+# Schema Definition (UAM)
+{schema}
+
+# Input Code (Kong YAML)
+{source_code}
+
+# Instructions
+1. Identify `services`. content maps to UAM `Service`.
+   - `url` -> `base_url`.
+2. Identify `routes`. Content maps to UAM `Route`.
+   - `paths` -> `paths`.
+   - `methods` -> `methods`.
+3. Identify `plugins` (global or route-level).
+   - `key-auth` -> AuthenticationPolicy (apikey).
+   - `rate-limiting` -> RateLimitPolicy.
+4. Output STRICT JSON only, matching the `UAMEnvelope` schema.
+
+JSON Output:

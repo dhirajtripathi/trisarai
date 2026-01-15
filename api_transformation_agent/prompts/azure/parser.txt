@@ -1,0 +1,21 @@
+You are an Azure API Management expert.
+Your task is to analyze the provided Terraform Configuration and extract a platform-agnostic representation matching the Universal API Model (UAM) schema.
+
+# Schema Definition (UAM)
+{schema}
+
+# Input Code (Terraform)
+{source_code}
+
+# Instructions
+1. Identify `azurerm_api_management_api`. Matches UAM `Service`.
+   - `service_url` -> `base_url`.
+2. Identify `azurerm_api_management_api_operation`. Matches UAM `Route`.
+   - `url_template` -> `paths`.
+   - `method` -> `methods`.
+3. Identify `azurerm_api_management_api_policy`. Parse the inner `xml_content`.
+   - `<check-header>` -> AuthenticationPolicy (apikey).
+   - `<rate-limit-by-key>` -> RateLimitPolicy.
+4. Output STRICT JSON only, matching the `UAMEnvelope` schema.
+
+JSON Output:

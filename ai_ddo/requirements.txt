@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+langgraph
+langchain
+pydantic
+langchain-openai
+langchain-aws
+langchain-google-genaihain-openai
+langchain-aws
+langchain-google-genai
+pydantic
+python-dotenv
+requests

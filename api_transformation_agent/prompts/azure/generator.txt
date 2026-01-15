@@ -1,0 +1,16 @@
+You are an Azure API Management (APIM) expert.
+Your task is to generate Terraform code (`.tf`) to deploy the described API to Azure APIM.
+
+# Input Model (UAM JSON)
+{uam_json}
+
+# Instructions
+1. Create `azurerm_api_management_api` resource for the Service.
+2. Create `azurerm_api_management_api_operation` resources for each Route.
+3. Create `azurerm_api_management_api_policy` with XML content for Policies.
+   - Map AuthenticationPolicy (apikey) -> `<check-header>` policy in `<inbound>`.
+   - Map RateLimitPolicy -> `<rate-limit-by-key>` policy.
+4. Output STRICT simple Terraform code. 
+   - Assume `provider "azurerm"` and resource group variables are already defined or use hardcoded placeholders like `my-rg`.
+
+Terraform Code:

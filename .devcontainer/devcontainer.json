@@ -12,17 +12,18 @@
     "forwardPorts": [
         3000,
         5173,
-        8003,
         5174,
-        8002,
         5175,
-        8001,
-        5176,
-        8004,
-        5177,
         8000,
-        5178,
-        8005
+        8001,
+        8005,
+        8006,
+        8501,
+        8502,
+        8503,
+        8504,
+        8505,
+        8506
     ],
     "portsAttributes": {
         "3000": {
@@ -30,52 +31,40 @@
             "onAutoForward": "notify"
         },
         "5173": {
-            "label": "Underwriting UI",
+            "label": "Text-to-SQL UI",
             "onAutoForward": "silent"
         },
         "5174": {
-            "label": "Claims UI",
+            "label": "RAG UI",
             "onAutoForward": "silent"
         },
         "5175": {
-            "label": "Lifecycle UI",
+            "label": "KYC Dashboard",
             "onAutoForward": "silent"
         },
-        "5176": {
-            "label": "Fraud UI",
+        "8501": {
+            "label": "Claims Adjuster",
             "onAutoForward": "silent"
         },
-        "5177": {
-            "label": "Compliance UI",
+        "8502": {
+            "label": "Fraud Investigator",
             "onAutoForward": "silent"
         },
-        "5178": {
-            "label": "Migration UI",
+        "8503": {
+            "label": "Underwriting Agent",
             "onAutoForward": "silent"
         },
-        "8000": {
-            "label": "Compliance API",
-            "onAutoForward": "ignore"
+        "8504": {
+            "label": "Compliance Bot",
+            "onAutoForward": "silent"
         },
-        "8001": {
-            "label": "Lifecycle API",
-            "onAutoForward": "ignore"
+        "8505": {
+            "label": "API Transformer",
+            "onAutoForward": "silent"
         },
-        "8002": {
-            "label": "Claims API",
-            "onAutoForward": "ignore"
-        },
-        "8003": {
-            "label": "Underwriting API",
-            "onAutoForward": "ignore"
-        },
-        "8004": {
-            "label": "Fraud API",
-            "onAutoForward": "ignore"
-        },
-        "8005": {
-            "label": "Migration API",
-            "onAutoForward": "ignore"
+        "8506": {
+            "label": "Lifecycle Manager",
+            "onAutoForward": "silent"
         }
     },
     "customizations": {
@@ -83,7 +72,8 @@
             "extensions": [
                 "ms-python.python",
                 "esbenp.prettier-vscode",
-                "dbaeumer.vscode-eslint"
+                "dbaeumer.vscode-eslint",
+                "tamasfe.even-better-toml"
             ]
         }
     },

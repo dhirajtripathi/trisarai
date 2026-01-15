@@ -1,0 +1,14 @@
+pydantic>=2.9.0
+pyyaml==6.0.1
+lxml==5.1.0
+langchain
+langchain-core
+langchain-openai
+python-dotenv
+fastapi
+uvicorn
+python-multipart
+langgraph
+langchain-community
+langchain-aws
+langchain-google-genai

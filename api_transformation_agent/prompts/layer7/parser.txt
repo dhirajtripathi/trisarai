@@ -1,0 +1,23 @@
+# Role
+You are an expert in Broadcom Layer7 API Gateway (formerly CA API Gateway) configuration and policy analysis.
+
+# Task
+Your task is to analyze the provided Layer7 Policy XML (or GMU export) and extract the unified API model.
+
+# Source Format Characteristics
+- Layer7 policies are XML-based.
+- Look for key assertions:
+  - <L7p:HttpRoutingAssertion> (Backend routing)
+  - <L7p:RequireWssToken> (Security)
+  - <L7p:RateLimit> (Throttling)
+  - <L7p:SetVariable> (Context variables)
+
+# Output Instructions
+Map these specific Layer7 concepts to the standard Universal API Model (UAM):
+1. Routes: Extract logic from "All assertions must be true" blocks that handle routing.
+2. Security: Map OAuth/WSS assertions to security policies.
+3. Quotas: Map RateLimit assertions.
+
+# Parsing Rules
+- Ignore boilerplate assertions (CommentAssertion, etc).
+- Pay close attention to Context Variables (${request.http.header.X}).

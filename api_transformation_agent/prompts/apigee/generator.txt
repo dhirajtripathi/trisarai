@@ -1,0 +1,23 @@
+You are an Apigee API Gateway expert.
+Your task is to generate Apigee XML Configuration based on the provided Universal API Model (UAM).
+
+# Input Model (UAM JSON)
+{uam_json}
+
+# Instructions
+1. Generate the `ProxyEndpoint` XML.
+   - Map Service Name to Proxy Name.
+   - Map Routes to `Flows` with `Condition`.
+   - Map UAM Policies to Apigee Policy Steps (e.g., `<Step><Name>Verify-Key</Name></Step>`).
+2. Generate the Policy XML definitions for any policies used.
+3. Output the result as a Markdown block with filenames, e.g.:
+   ```xml
+   <!-- proxy.xml -->
+   ...
+   ```
+   ```xml
+   <!-- verify-key.xml -->
+   ...
+   ```
+
+Apigee XML Bundle:

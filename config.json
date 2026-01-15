@@ -1,0 +1,26 @@
+{
+    "llm_provider": "azure",
+    "azure_config": {
+        "api_key": "YOUR_AZURE_API_KEY",
+        "endpoint": "https://genai-openai-wb.openai.azure.com/",
+        "deployment": "gpt-4o-wb",
+        "model_name": "gpt-4o",
+        "api_version": "2025-01-01-preview"
+    },
+    "aws_config": {
+        "region": "us-east-1",
+        "model_id": "anthropic.claude-3-sonnet-20240229-v1:0",
+        "access_key_id": "YOUR_AWS_ACCESS_KEY",
+        "secret_access_key": "YOUR_AWS_SECRET_KEY"
+    },
+    "google_config": {
+        "api_key": "YOUR_GEMINI_API_KEY",
+        "model": "gemini-1.5-pro"
+    },
+    "jira_config": {
+        "url": "https://your-domain.atlassian.net",
+        "email": "your-email@example.com",
+        "api_token": "YOUR_JIRA_TOKEN",
+        "space_key": "DEV"
+    }
+}

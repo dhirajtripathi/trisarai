@@ -1,0 +1,25 @@
+{
+    "name": "rag-mcp-server",
+    "version": "0.1.0",
+    "description": "RAG Server exposing search resources and ingestion tools",
+    "capabilities": {
+        "resources": {
+            "subscribe": true,
+            "listChanged": true
+        },
+        "tools": {
+            "listChanged": true
+        },
+        "prompts": {
+            "listChanged": true
+        }
+    },
+    "transport": {
+        "type": "stdio",
+        "command": "python",
+        "args": [
+            "-m",
+            "rag_mcp_server.main"
+        ]
+    }
+}

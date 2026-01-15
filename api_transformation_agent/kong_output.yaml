@@ -1,0 +1,16 @@
+_format_version: '3.0'
+services:
+- name: default
+  url: https://httpbin.org/get
+  routes:
+  - name: Login
+    paths:
+    - /login
+    methods:
+    - POST
+  plugins:
+  - name: key-auth
+    config:
+      key_names:
+      - x-api-key
+      key_in_header: true

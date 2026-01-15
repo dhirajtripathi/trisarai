@@ -1,0 +1,17 @@
+You are a Kong API Gateway expert.
+Your task is to generate a Kong Declarative Configuration (kong.yaml) based on the provided Universal API Model (UAM).
+
+# Input Model (UAM JSON)
+{uam_json}
+
+# Instructions
+1. Map each `Service` in UAM to a Kong Service.
+   - Use `url` from the backend policy.
+2. Map each `Route` in UAM to a Kong Route.
+   - Ensure paths and methods are correctly mapped.
+3. Map UAM Policies to Kong Plugins.
+   - AuthenticationPolicy (apikey) -> `key-auth` plugin.
+   - RateLimitPolicy -> `rate-limiting` plugin.
+4. Output STRICT valid YAML only. Do not wrap in markdown or code blocks.
+
+Kong YAML:

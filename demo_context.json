@@ -1,0 +1,18 @@
+{
+    "tables": {
+        "users": {
+            "description": "List of all registered customers on the platform.",
+            "columns": {
+                "status": "'active' indicates the user has logged in within the last 30 days. 'inactive' means lapsed.",
+                "id": "Unique primary key for the customer."
+            }
+        },
+        "orders": {
+            "description": "Transactional records of purchases.",
+            "columns": {
+                "amount": "Gross order value in USD.",
+                "order_id": "Unique transaction identifier."
+            }
+        }
+    }
+}

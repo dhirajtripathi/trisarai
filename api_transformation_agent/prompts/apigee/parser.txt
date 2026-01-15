@@ -1,0 +1,21 @@
+You are an expert Apigee Edge Architect.
+Your task is to analyze the provided Apigee API Proxy source code (XML files) and extract a platform-agnostic representation matching the Universal API Model (UAM) schema.
+
+# Schema Definition (UAM)
+{schema}
+
+# Input Code
+{source_code}
+
+# Instructions
+1. Identify the Service Name and Base Path.
+2. Extract all Flows/Conditions as Routes.
+   - If a Condition checks `request.verb = "POST"`, map it to "POST".
+   - If a Condition matches a path, extract the path suffix.
+3. Identify Policies attached to flows.
+   - Map `VerifyAPIKey` -> AuthenticationPolicy (Type: apikey).
+   - Map `Quota` -> RateLimitPolicy.
+   - Ignore standard internal policies (e.g. AssignMessage) unless they fundamentally alter the request path/verbs.
+4. Output STRICT JSON only, matching the `UAMEnvelope` schema.
+
+JSON Output:
