@@ -127,7 +127,7 @@ function App() {
                 <div className="text-center mb-16 animate-in fade-in slide-in-from-bottom-8 duration-700">
                     <div className="inline-flex items-center gap-2 text-emerald-500 font-mono text-xs font-bold uppercase tracking-[0.2em] mb-4 bg-emerald-500/10 px-4 py-2 rounded-full border border-emerald-500/20 shadow-[0_0_20px_rgba(16,185,129,0.2)]">
                         <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                        Nexus_OS v3.0
+                        Nexus_OS v3.1 (Full Suite)
                     </div>
                     <h1 className="text-5xl md:text-7xl font-black text-white tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-b from-white to-slate-500">
                         Agentic<span className="text-emerald-500">AIs</span>
@@ -143,8 +143,8 @@ function App() {
                                 key={d.id}
                                 onClick={() => setFilter(d.id)}
                                 className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 ${filter === d.id
-                                        ? 'bg-zinc-800 text-white shadow-lg'
-                                        : 'text-zinc-500 hover:text-zinc-300'
+                                    ? 'bg-zinc-800 text-white shadow-lg'
+                                    : 'text-zinc-500 hover:text-zinc-300'
                                     }`}
                             >
                                 {d.label}
