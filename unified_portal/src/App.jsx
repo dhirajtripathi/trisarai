@@ -26,7 +26,8 @@ function App() {
         },
         {
             title: "RAG Knowledge Base",
-            description: "Intelligent document retrieval and Q&A system for enterprise policies.",
+            title: "RAG Knowledge Base",
+            description: "Enterprise Q&A system. Ingest documents and chat with your policies via VectorDB.",
             icon: Search,
             color: "indigo",
             domain: "data",
@@ -36,7 +37,8 @@ function App() {
         // --- Financial Services ---
         {
             title: "Dynamic Underwriter",
-            description: "Real-time life & health risk pricing using IoT data and context engineering.",
+            title: "Dynamic Underwriter",
+            description: "AI-driven risk assessment using Medical History & IoT Data. Features Human-in-the-Loop review.",
             icon: Activity,
             color: "emerald",
             domain: "fsi",
@@ -44,7 +46,8 @@ function App() {
         },
         {
             title: "Classic KYC Platform",
-            description: "Automated Know Your Customer verification and document processing.",
+            title: "Classic KYC Platform",
+            description: "Agentic workflow (Doc -> Risk -> Compliance) with stepped human verification.",
             icon: FileText,
             color: "teal",
             domain: "fsi",
@@ -52,7 +55,8 @@ function App() {
         },
         {
             title: "Computer Vision FNOL",
-            description: "Autonomous claims intake and damage analysis using vision models.",
+            title: "Computer Vision FNOL",
+            description: "Analyze accident photos (Blurry/Clear) and voice transcripts for instant claims estimation.",
             icon: Zap,
             color: "yellow",
             domain: "fsi",
@@ -60,7 +64,8 @@ function App() {
         },
         {
             title: "Fraud Investigator",
-            description: "SIU counter-intelligence dashboard for detecting anomalies.",
+            title: "Fraud Investigator",
+            description: "SIU workbench for investigating suspicious claims with evidentiary logs.",
             icon: Shield,
             color: "rose",
             domain: "fsi",
@@ -68,7 +73,8 @@ function App() {
         },
         {
             title: "Compliance Bot",
-            description: "Automated regulatory scanning and RAG-based response compliance.",
+            title: "Compliance Bot",
+            description: "Regulatory firewall that scans draft decisions and rewrites them for safety.",
             icon: Globe,
             color: "amber",
             domain: "fsi",
@@ -78,7 +84,8 @@ function App() {
         // --- Developer Tools ---
         {
             title: "API Transformer",
-            description: "Legacy SOAP/XML to Modern REST/JSON migration agent.",
+            title: "API Transformer",
+            description: "Modernize legacy WSDL/XML interfaces to REST/OpenAPI specs automatically.",
             icon: Server,
             color: "cyan",
             domain: "dev",
@@ -86,7 +93,8 @@ function App() {
         },
         {
             title: "Migration Agent",
-            description: "Legacy to Cloud-Native transformation (WebMethods -> Spring Boot).",
+            title: "Integration Migration",
+            description: "Reverse-engineer legacy ESB flows (XML) into Spring Boot/Java + JUnit tests.",
             icon: RefreshCw,
             color: "sky",
             domain: "dev",
@@ -94,7 +102,8 @@ function App() {
         },
         {
             title: "Lifecycle Manager",
-            description: "SDLC orchestration and release management automation.",
+            title: "Lifecycle Manager",
+            description: "Proactive policy management. Simulates life events (Marriage, Home) to Upsell/Cross-sell.",
             icon: Layers,
             color: "purple",
             domain: "dev",
@@ -102,7 +111,8 @@ function App() {
         },
         {
             title: "AI DDO",
-            description: "Automated Data Due Diligence and Operations agent.",
+            title: "AI DDO",
+            description: "Digital Delivery Orchestrator: specialized agents (PO, SM, PM) for Agile management.",
             icon: FileJson,
             color: "fuchsia",
             domain: "dev",
